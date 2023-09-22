@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagem Centralizada</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #imagemCentralizada {
+            cursor: pointer;
+        }
+
+        #fundoDesfocado {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.alexandrepavao.com/cdn/shop/files/FOURPOCKETS_ALEXANDRE_PAVAO_20VIDEO_2-2_1aa4a995-467e-42e4-a78a-a14c3c14774a_2048x2048.gif?v=1694361722') center/cover fixed no-repeat; /* Imagem de fundo desfocada */
+        }
+
+        #texto {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            color: rgb(0, 0, 0);
+        }
+    </style>
+</head>
+<body>
+    <div id="fundoDesfocado"></div>
+    <img id="imagemCentralizada" src="https://pa1.aminoapps.com/6410/7f2dd406f73537cb91d99f8cf1f879812b899afc_hq.gif" alt="Presente">
+    <div id="texto">
+        <p>✨Hoje é um dia especial, o dia em que celebramos mais um ano da sua incrível jornada neste mundo. ✨</p>
+        <p>Eu sou um homem de tanta sorte por ter você na minha vida.</p>
+        <p>O mínimo que eu poderia fazer por você era dar um presente especial para uma mulher especial!</p>
+    </div>
+    
+    <script>
+        const fundoDesfocado = document.getElementById('fundoDesfocado');
+        const imagemCentralizada = document.getElementById('imagemCentralizada');
+        const texto = document.getElementById('texto');
+
+        imagemCentralizada.addEventListener('click', function() {
+            fundoDesfocado.style.display = 'block';
+            imagemCentralizada.style.display = 'none';
+            
+            setTimeout(function() {
+                fundoDesfocado.style.display = 'none';
+                texto.style.display = 'block';
+            }, 3000); // 5000 milissegundos = 5 segundos
+        });
+    </script>
+</body>
+</html>
+
